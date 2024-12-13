@@ -18,7 +18,7 @@ export default function Home() {
   const [clicked, setClicked] = useState(false);
 
   useEffect(() => {
-    const newSocket = io("http://10.65.4.1:3001");
+    const newSocket = io("http://10.65.4.1:4000");
     setSocket(newSocket);
 
     return () => {

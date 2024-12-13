@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { io, Socket } from "socket.io-client";
+import { io } from "socket.io-client";
 
 type Participant = {
   id: string;
@@ -13,12 +13,12 @@ type Participant = {
 };
 
 export default function Lobby() {
-  const [socket, setSocket] = useState<Socket | null>(null);
+  const [socket, setSocket] = useState<any>(null);
   const [participants, setParticipants] = useState<Participant[]>([]);
   const [clickOrder, setClickOrder] = useState<string[]>([]);
 
   useEffect(() => {
-    const newSocket = io("http://localhost:3001");
+    const newSocket = io("http://localhost:4000");
     setSocket(newSocket);
 
     return () => {

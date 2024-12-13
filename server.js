@@ -3,6 +3,9 @@ const { Server } = require("socket.io");
 const participants = new Map();
 let clickOrder = [];
 
+const PORT = process.env.WS_PORT || 4000;
+const HOST = process.env.HOST || "0.0.0.0";
+
 const io = new Server({
   cors: {
     origin: "*",
@@ -75,4 +78,5 @@ io.on("connection", (socket) => {
   });
 });
 
-io.listen(3001);
+io.listen(PORT);
+console.log(`Socket.IO server is running on http://${HOST}:${PORT}`);
