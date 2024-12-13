@@ -23,8 +23,8 @@ services:
     ports:
       - "4000:4000"
     volumes:
-      - .:/app
-      - /app/node_modules
+      - ./backend:/app/backend
+      - /app/backend/node_modules
     environment:
       - NODE_ENV=development
       - WS_PORT=4000
