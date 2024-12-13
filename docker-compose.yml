@@ -22,9 +22,8 @@ services:
       dockerfile: Dockerfile.backend
     ports:
       - "4000:4000"
-    volumes:
-      - ./backend:/app/backend
-      - /app/backend/node_modules
+    volumes:  
+      - ./backend:/app
     environment:
       - NODE_ENV=development
       - WS_PORT=4000
