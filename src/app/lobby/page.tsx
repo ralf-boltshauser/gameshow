@@ -18,7 +18,7 @@ export default function Lobby() {
   const [clickOrder, setClickOrder] = useState<string[]>([]);
 
   useEffect(() => {
-    const newSocket = io("http://localhost:4000");
+    const newSocket = io(window.location.origin.replace(/:\d+$/, ":4000"));
     setSocket(newSocket);
 
     return () => {
